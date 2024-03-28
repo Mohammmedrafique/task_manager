@@ -40,7 +40,7 @@ export const AddNote = () => {
       );
 
       if (response.ok) {
-        navigate("/"); // Redirect to homepage after adding note
+        navigate("/notes"); // Redirect to homepage after adding note
       } else {
         alert("Failed to add note. Please try again.");
       }

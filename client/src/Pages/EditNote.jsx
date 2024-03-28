@@ -76,7 +76,7 @@ const EditNote = () => {
 
       if (response.ok) {
         // Redirect to the note list after successful update
-        navigate("/");
+        navigate("/notes");
       } else {
         // Handle error response from the server
         const data = await response.json();
