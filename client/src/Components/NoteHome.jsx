@@ -5,9 +5,8 @@ import { Link } from "react-router-dom";
 const NoteHome = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  
   useEffect(() => {
-    const token = localStorage.getItem("token"); 
+    const token = localStorage.getItem("token");
     if (token) {
       setIsLoggedIn(true);
     }
@@ -29,12 +28,23 @@ const NoteHome = () => {
             The all-in-one note-taking app to boost your productivity and
             creativity.
           </p>
-          <Link
-            to={"/register"}
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300"
-          >
-            Get Started for Free
-          </Link>
+
+          {isLoggedIn && (
+            <Link
+              to={"/addnote"}
+              className="px-4 py-2 mt-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300"
+            >
+              Add New Note
+            </Link>
+          )}
+          {!isLoggedIn && (
+            <Link
+              to={"/register"}
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300"
+            >
+              Get Started for Free
+            </Link>
+          )}
           {isLoggedIn && (
             <Link
               to={"/notes"}
