@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const NoteHome = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Function to check if JWT token exists
+  
   useEffect(() => {
-    const token = localStorage.getItem("token"); // Assuming you store token in localStorage
+    const token = localStorage.getItem("token"); 
     if (token) {
       setIsLoggedIn(true);
     }
