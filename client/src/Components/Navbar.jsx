@@ -50,7 +50,7 @@ export const Navbar = () => {
 
   return (
     <div className="flex border-b border-gray-300 items-center px-4 h-16 bg-white">
-      <h2 className="text-xl font-semibold">Task Manager</h2>
+      <h2 className="text-xl font-semibold"><Link to={"/"}>Task Manager</Link></h2>
       <nav className="ml-auto space-x-4">
         <Link to={"/"} className="text-blue-500 hover:text-blue-700">
           Home

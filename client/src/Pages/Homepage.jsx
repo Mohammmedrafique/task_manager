@@ -1,17 +1,13 @@
 import React from "react";
-
-import styled from "styled-components";
-import { NoteList} from "../Components/NoteList";
+import { NoteList } from "../Components/NoteList";
+import NoteHome from "../Components/NoteHome";
+import Footer from "./Footer";
 
 export const Homepage = () => {
   return (
-    <DIV>
-      <NoteList/>
-    </DIV>
+    <div className="w-screenmax-w-screen w-full">
+      <NoteHome />
+      <Footer />
+    </div>
   );
 };
-
-const DIV = styled.div`
-  display: flex;
-  gap: 10px;
-`;

@@ -8,6 +8,8 @@ import { Register } from "./Register";
 import { AddNote } from "../Components/AddNote";
 
 import EditNote from "./EditNote";
+import NoteHome from "../Components/NoteHome";
+import { NoteList } from "../Components/NoteList";
 
 export const MainRoutes = () => {
   return (
@@ -18,6 +20,8 @@ export const MainRoutes = () => {
       <Route path="/register" element={<Register />}></Route>
       <Route path="/addnote" element={<AddNote />}></Route>
       <Route path="/update/:id" element={<EditNote />} />
+
+      <Route path="/notes" element={<NoteList />} />
       <Route
         path="/edit-book/:id"
         element={<PrivateRoute>{/* <EditBook /> */}</PrivateRoute>}
