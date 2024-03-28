@@ -72,7 +72,7 @@ export const NoteList = () => {
 
   return (
     <div className="container mx-auto">
-      <h2 className="text-3xl font-bold text-center my-4">Notes</h2>
+      <h2 className="text-3xl font-bold text-center my-4">All Notes</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {notes.map((note) => (
           <div className="bg-white rounded-lg overflow-hidden shadow-md mx-auto max-w-sm w-full" key={note._id}>
