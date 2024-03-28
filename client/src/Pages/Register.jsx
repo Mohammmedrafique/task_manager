@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 
-export const Login = () => {
+export const Register = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
+    username: "",
     email: "",
     password: "",
   });
 
-  const { email, password } = formData;
+  const { username, email, password } = formData;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,7 +24,7 @@ export const Login = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://better-wasp-overshirt.cyclic.app/users/login",
+        "https://better-wasp-overshirt.cyclic.app/users/register",
         {
           method: "POST",
           headers: {
@@ -35,19 +35,13 @@ export const Login = () => {
       );
 
       if (response.ok) {
-        const data = await response.json();
-        if (data.token) {
-          localStorage.setItem("token", data.token);
-          navigate("/"); // Redirect to homepage
-        } else {
-          alert("Token not found in response.");
-        }
+        navigate("/login"); // Redirect to login page after successful registration
       } else {
-        alert("Wrong credentials. Please try again.");
+        alert("Registration failed. Please try again.");
       }
     } catch (error) {
-      console.error("Error during login:", error);
-      alert("An error occurred during login. Please try again.");
+      console.error("Error during registration:", error);
+      alert("An error occurred during registration. Please try again.");
     }
   };
 
@@ -56,11 +50,27 @@ export const Login = () => {
       <div className="max-w-md w-full space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
+            Create your account
           </h2>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
+            <div>
+              <label htmlFor="username" className="sr-only">
+                Username
+              </label>
+              <input
+                id="username"
+                name="username"
+                type="text"
+                autoComplete="username"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Username"
+                value={username}
+                onChange={handleChange}
+              />
+            </div>
             <div>
               <label htmlFor="email-address" className="sr-only">
                 Email address
@@ -71,7 +81,7 @@ export const Login = () => {
                 type="email"
                 autoComplete="email"
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Email address"
                 value={email}
                 onChange={handleChange}
@@ -85,7 +95,7 @@ export const Login = () => {
                 id="password"
                 name="password"
                 type="password"
-                autoComplete="current-password"
+                autoComplete="new-password"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Password"
@@ -100,17 +110,17 @@ export const Login = () => {
               type="submit"
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Sign in
+              Register
             </button>
           </div>
           <div className="text-center mt-4">
             <p>
-              Don't have an account?{" "}
+              Already have an account?{" "}
               <Link
-                to="/register"
+                to="/login"
                 className="font-medium text-indigo-600 hover:text-indigo-500"
               >
-                Register here
+                Log in here
               </Link>
             </p>
           </div>

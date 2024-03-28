@@ -1,5 +1,5 @@
 import React from "react";
-import { Sidebar } from "../Components/Sidebar";
+
 import styled from "styled-components";
 import { NoteList} from "../Components/NoteList";
 
