@@ -24,7 +24,7 @@ export const Login = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://better-wasp-overshirt.cyclic.app/users/login",
+        "https://task-manager-fb5d.vercel.app/users/login",
         {
           method: "POST",
           headers: {

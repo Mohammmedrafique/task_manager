@@ -21,7 +21,7 @@ const EditNote = () => {
         }
 
         const response = await fetch(
-          `https://better-wasp-overshirt.cyclic.app/notes/${id}`,
+          `https://task-manager-fb5d.vercel.app/notes/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -60,7 +60,7 @@ const EditNote = () => {
       }
 
       const response = await fetch(
-        `https://better-wasp-overshirt.cyclic.app/notes/update/${id}`,
+        `https://task-manager-fb5d.vercel.app/notes/update/${id}`,
         {
           method: "PATCH",
           headers: {
@@ -108,7 +108,10 @@ const EditNote = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="content" className="block text-gray-700 font-bold mb-2">
+          <label
+            htmlFor="content"
+            className="block text-gray-700 font-bold mb-2"
+          >
             Content
           </label>
           <textarea

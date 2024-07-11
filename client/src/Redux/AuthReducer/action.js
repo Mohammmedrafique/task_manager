@@ -1,11 +1,18 @@
 import axios from "axios";
-import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, REGISTER_FAILURE, REGISTER_REQUEST, REGISTER_SUCCESS } from "./actionTypes";
+import {
+  LOGIN_FAILURE,
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  REGISTER_FAILURE,
+  REGISTER_REQUEST,
+  REGISTER_SUCCESS,
+} from "./actionTypes";
 
 export const login = (credentials) => (dispatch) => {
   dispatch({ type: LOGIN_REQUEST });
 
   return axios
-    .post("https://better-wasp-overshirt.cyclic.app/users/login", credentials)
+    .post("https://task-manager-fb5d.vercel.app/users/login", credentials)
     .then((res) => {
       dispatch({ type: LOGIN_SUCCESS, payload: res.data.token });
       // Optionally, save token to local storage or cookies
@@ -22,7 +29,7 @@ export const register = (userData) => (dispatch) => {
   dispatch({ type: REGISTER_REQUEST });
 
   return axios
-    .post("https://better-wasp-overshirt.cyclic.app/users/register", userData)
+    .post("https://task-manager-fb5d.vercel.app/users/register", userData)
     .then((res) => {
       dispatch({ type: REGISTER_SUCCESS });
       // Optionally, you can dispatch a success action or redirect to login page

@@ -28,7 +28,7 @@ export const AddNote = () => {
       }
 
       const response = await fetch(
-        "https://better-wasp-overshirt.cyclic.app/notes/create",
+        "https://task-manager-fb5d.vercel.app/notes/create",
         {
           method: "POST",
           headers: {

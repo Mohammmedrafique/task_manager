@@ -12,7 +12,7 @@ export const getBooks = () => (dispatch) => {
   const token = localStorage.getItem("jwtToken");
 
   axios
-    .get(`https://better-wasp-overshirt.cyclic.app/notes`, {
+    .get(`https://task-manager-fb5d.vercel.app/notes`, {
       headers: {
         Authorization: `Bearer ${token}`, // Include token in Authorization header
       },
@@ -34,15 +34,11 @@ export const editBook = (id, data) => (dispatch) => {
   const token = localStorage.getItem("jwtToken");
 
   axios
-    .patch(
-      `https://better-wasp-overshirt.cyclic.app/notes/update/${id}`,
-      data,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`, // Include token in Authorization header
-        },
-      }
-    )
+    .patch(`https://task-manager-fb5d.vercel.app/notes/update/${id}`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`, // Include token in Authorization header
+      },
+    })
     .then((res) => {
       console.log("Response from editBook API:", res.data);
       dispatch({ type: PATCH_BOOK_SUCCESS });

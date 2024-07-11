@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export const Register = () => {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ export const Register = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://better-wasp-overshirt.cyclic.app/users/register",
+        "https://task-manager-fb5d.vercel.app/users/register",
         {
           method: "POST",
           headers: {

@@ -15,7 +15,7 @@ export const NoteList = () => {
         }
 
         const response = await fetch(
-          "https://better-wasp-overshirt.cyclic.app/notes",
+          "https://task-manager-fb5d.vercel.app/notes",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -45,7 +45,7 @@ export const NoteList = () => {
       }
 
       const response = await fetch(
-        `https://better-wasp-overshirt.cyclic.app/notes/delete/${id}`,
+        `https://task-manager-fb5d.vercel.app/notes/delete/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -75,7 +75,10 @@ export const NoteList = () => {
       <h2 className="text-3xl font-bold text-center my-4">All Notes</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {notes.map((note) => (
-          <div className="bg-white rounded-lg overflow-hidden shadow-md mx-auto max-w-sm w-full" key={note._id}>
+          <div
+            className="bg-white rounded-lg overflow-hidden shadow-md mx-auto max-w-sm w-full"
+            key={note._id}
+          >
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">{note.title}</h3>
               <p className="text-gray-700">{note.content}</p>
@@ -86,7 +89,10 @@ export const NoteList = () => {
                   Edit
                 </button>
               </Link>
-              <button onClick={() => handleDelete(note._id)} className="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+              <button
+                onClick={() => handleDelete(note._id)}
+                className="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              >
                 Delete
               </button>
             </div>
