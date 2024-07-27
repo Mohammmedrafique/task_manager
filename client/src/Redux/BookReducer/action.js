@@ -12,7 +12,7 @@ export const getBooks = () => (dispatch) => {
   const token = localStorage.getItem("jwtToken");
 
   axios
-    .get(`https://task-manager-fb5d.vercel.app/notes`, {
+    .get(`https://task-manager-hkte.onrender.com/notes`, {
       headers: {
         Authorization: `Bearer ${token}`, // Include token in Authorization header
       },
@@ -34,7 +34,7 @@ export const editBook = (id, data) => (dispatch) => {
   const token = localStorage.getItem("jwtToken");
 
   axios
-    .patch(`https://task-manager-fb5d.vercel.app/notes/update/${id}`, data, {
+    .patch(`https://task-manager-hkte.onrender.com/notes/update/${id}`, data, {
       headers: {
         Authorization: `Bearer ${token}`, // Include token in Authorization header
       },

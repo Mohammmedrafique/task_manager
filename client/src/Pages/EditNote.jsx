@@ -21,7 +21,7 @@ const EditNote = () => {
         }
 
         const response = await fetch(
-          `https://task-manager-fb5d.vercel.app/notes/${id}`,
+          `https://task-manager-hkte.onrender.com/notes/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -60,7 +60,7 @@ const EditNote = () => {
       }
 
       const response = await fetch(
-        `https://task-manager-fb5d.vercel.app/notes/update/${id}`,
+        `https://task-manager-hkte.onrender.com/notes/update/${id}`,
         {
           method: "PATCH",
           headers: {

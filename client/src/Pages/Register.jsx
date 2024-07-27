@@ -24,7 +24,7 @@ export const Register = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://task-manager-fb5d.vercel.app/users/register",
+        "https://task-manager-hkte.onrender.com/users/register",
         {
           method: "POST",
           headers: {

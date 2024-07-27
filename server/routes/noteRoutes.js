@@ -5,11 +5,11 @@ const {
   updateNote,
   deleteNote,
 } = require("../controllers/noteController");
-// const authMiddleware = require("../middleware/authMiddleware");
+const authMiddleware = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
-// router.use(authMiddleware);
+router.use(authMiddleware);
 
 router.post("/create", createNote);
 router.get("/", getNotes);

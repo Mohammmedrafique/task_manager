@@ -28,7 +28,7 @@ export const AddNote = () => {
       }
 
       const response = await fetch(
-        "https://task-manager-fb5d.vercel.app/notes/create",
+        "https://task-manager-hkte.onrender.com/notes/create",
         {
           method: "POST",
           headers: {

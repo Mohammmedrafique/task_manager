@@ -15,7 +15,7 @@ export const NoteList = () => {
         }
 
         const response = await fetch(
-          "https://task-manager-fb5d.vercel.app/notes",
+          "https://task-manager-hkte.onrender.com/notes",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -45,7 +45,7 @@ export const NoteList = () => {
       }
 
       const response = await fetch(
-        `https://task-manager-fb5d.vercel.app/notes/delete/${id}`,
+        `https://task-manager-hkte.onrender.com/notes/delete/${id}`,
         {
           method: "DELETE",
           headers: {
